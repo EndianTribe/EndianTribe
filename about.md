@@ -12,7 +12,7 @@ When I first started doing computer stuff I found tutorial videos far more comfo
 
 
 
-I make short and (hopefully) concise reference videos that discuss only *one* concept per video. From now and then I then sprinkle in longer “guided tour” videos where rubber meets the road.
+I make short and (hopefully) concise reference videos that discuss only *one* concept per video. From now and then I then sprinkle in longer “guided tour” videos where the rubber hits the road.
 
 
 
