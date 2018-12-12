@@ -4,15 +4,20 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Endian Tribe is a multi-billion-Zimbabwean-dollar organization that makes computer science-related educational resource. It is run by a highly experienced and pedigreed team of one.
 
 
-[jekyll-organization]: https://github.com/jekyll
+
+When I first started doing computer stuff I found tutorial videos far more comforting than written articles. They dish out information in a more entertaining manner at a reasonable pace. I intend to contribute to what I found to be tremendously helpful.
+
+
+
+I make short and (hopefully) concise reference videos that discuss only *one* concept per video. From now and then I then sprinkle in longer “guided tour” videos where rubber meets the road.
+
+
+
+It is called Endian Tribe simply because the very first video is on Endianness.
+
+
+
+More later.

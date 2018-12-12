@@ -11,6 +11,7 @@ github_username:  EndianTribe
 show_excerpts: true
 markdown: kramdown
 theme: minima
+google_analytics: UA-130867627-1
 plugins:
   - jekyll-feed
 
