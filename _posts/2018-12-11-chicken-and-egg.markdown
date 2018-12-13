@@ -4,7 +4,7 @@ title:  "Chicken and Egg"
 date:   2018-12-11 19:31:59 -0500
 categories: state of the tribe
 ---
-I want to make short and sweet tutorial videos on computer science. For someone who has never done this before, challenges are numerous in number.
+I want to make short and sweet tutorial videos on computer science. For someone who has never done this before, challenges are numerous.
 
 
 
