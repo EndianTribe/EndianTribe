@@ -8,7 +8,7 @@ Youtube video related to this post can be found here.
 
 First, you will need to check if Address Space Layout Randomization (ASLR) is enabled on your Linux system. ASLR randomizes memory layout as a security measure to discourage certain memory exploits. Disabling it allows us to read memory more easily.
 
-Run the following command in Linux terminal.
+To disable ASLR, run the following command in Linux terminal.
 {% highlight shell %}
 echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
 {% endhighlight %}
@@ -27,7 +27,7 @@ cat /proc/sys/kernel/randomize_va_space
 [Source](https://securityetalii.es/2013/02/03/how-effective-is-aslr-on-linux-systems/)
 
 Now let's write our dummy C program:
-{% highlight c linenos %}
+{% highlight c %}
 #include <stdio.h>
 
 int main () {
@@ -41,10 +41,14 @@ We save the file as `ETT001.c` on Desktop. Then we use gcc to compile it:
 {% highlight shell %}
 gcc -o ETT001 ETT001.c -fno-stack-protector -fno-asynchronous-unwind-tables -fno-dwarf2-cfi-asm -g
 {% endhighlight %}
-`gcc` is the compiler program name
-`-o ETT001` specifies the output name
-`ETT001.c` specifies the source C file
-`-fno-stack-protector` disables the stack protector so that assembly and memory can be read more easily
+
+* `gcc` is the compiler program name
+
+* `-o ETT001` specifies the output name
+
+* `ETT001.c` specifies the source C file
+
+* `-fno-stack-protector` disables the stack protector so that assembly and memory can be read more easily
 
 Now we are ready to use gdb to crack open the compiled C program.
 {% highlight shell %}
