@@ -2,7 +2,7 @@
 layout: post
 title:  "ASCII in C"
 date:   2018-12-16 12:00:00 -0500
-categories: ET Tour
+categories: ET_Tour
 ---
 **TL;DR: ASCII characters, when stored in memory in `char` arrays in C, are stored sequentially without regard to endianness.**
 
