@@ -6,6 +6,8 @@ categories: ET Tour
 ---
 Youtube video related to this post can be found here.
 
+**TL;DR: ASCII characters, when stored in memory in `char` arrays in C, are stored sequentially without regard to endianness.**
+
 First, we need to check if Address Space Layout Randomization (ASLR) is enabled on the Linux system. ASLR randomizes memory layout as a security measure to discourage certain memory exploits. Disabling it allows us to read memory more easily.
 
 To disable ASLR, run the following command in Linux terminal.
