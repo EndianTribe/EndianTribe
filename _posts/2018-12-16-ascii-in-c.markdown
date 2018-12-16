@@ -55,7 +55,9 @@ gdb ETT001
 {% endhighlight %}
 
 We now add a breakpoint at the beginning of line 5.
+
 `(gdb) break ETT001.c:5`
+
 When the program hits this breakpoint, the previous line (below) will have been executed. In other words, the `char` array `sad_cold_truth` will have been allocated and written in memory (and available for our inspection).
 {% highlight c %}
 char sad_cold_truth[23] = "BTW, I don't use Arch.";
