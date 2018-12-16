@@ -4,9 +4,9 @@ title:  "ASCII in C"
 date:   2018-12-16 12:00:00 -0500
 categories: ET Tour
 ---
-Youtube video related to this post can be found here.
-
 **TL;DR: ASCII characters, when stored in memory in `char` arrays in C, are stored sequentially without regard to endianness.**
+
+Youtube video related to this post can be found here.
 
 To demonstrate:
 
