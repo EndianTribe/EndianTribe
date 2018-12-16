@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ASCII in C"
+title:  "ASCII in C and Endianness"
 date:   2018-12-16 12:00:00 -0500
 categories: ET_Tour
 ---
