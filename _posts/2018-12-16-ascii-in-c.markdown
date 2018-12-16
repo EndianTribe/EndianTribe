@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "ASCII in C"
+date:   2018-12-16 12:00:00 -0500
+categories: ET Tour
+---
+Youtube video related to this post can be found here.
+
+First, you will need to check if Address Space Layout Randomization (ASLR) is enabled on your Linux system. ASLR randomizes memory layout as a security measure to discourage certain memory exploits. Disabling it allows us to read memory more easily.
+
+Run the following command in Linux terminal.
+{% highlight shell %}
+echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+{% endhighlight %}
+
+To check if ASLR is enabled, use the following command.
+{% highlight shell %}
+cat /proc/sys/kernel/randomize_va_space
+{% endhighlight %}
+
+* 0 – No randomization. Everything is static.
+
+* 1 – Conservative randomization. Shared libraries, stack, `mmap()`, VDSO and heap are randomized.
+
+* 2 – Full randomization. In addition to elements listed in the previous point, memory managed through `brk()` is also randomized.
+
+[Source](https://securityetalii.es/2013/02/03/how-effective-is-aslr-on-linux-systems/)
+
+Now let's write our dummy C program:
+{% highlight c linenos %}
+#include <stdio.h>
+
+int main () {
+​	char sad_cold_truth[23] = "BTW, I don't use Arch.";
+​	printf("%s\n", sad_cold_truth);
+​	return(0);
+}
+{% endhighlight %}
+
+We save the file as `ETT001.c` on Desktop. Then we use gcc to compile it:
+{% highlight shell %}
+gcc -o ETT001 ETT001.c -fno-stack-protector -fno-asynchronous-unwind-tables -fno-dwarf2-cfi-asm -g
+{% endhighlight %}
+`gcc` is the compiler program name
+`-o ETT001` specifies the output name
+`ETT001.c` specifies the source C file
+`-fno-stack-protector` disables the stack protector so that assembly and memory can be read more easily
+
+Now we are ready to use gdb to crack open the compiled C program.
+{% highlight shell %}
+gdb ETT001
+{% endhighlight %}
+Note that it should be `ETT001` and not `ETT001.c`. gdb needs the binary, which already has the source information burnt in with the `-g` option when compiling with gcc.
+
