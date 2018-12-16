@@ -8,12 +8,9 @@ Youtube video related to this post can be found here.
 
 **TL;DR: ASCII characters, when stored in memory in `char` arrays in C, are stored sequentially without regard to endianness.**
 
-First, we need to check if Address Space Layout Randomization (ASLR) is enabled on the Linux system. ASLR randomizes memory layout as a security measure to discourage certain memory exploits. Disabling it allows us to read memory more easily.
+To demonstrate:
 
-To disable ASLR, run the following command in Linux terminal.
-{% highlight shell %}
-echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
-{% endhighlight %}
+First, we need to check if Address Space Layout Randomization (ASLR) is enabled on the Linux system. ASLR randomizes memory layout as a security measure to discourage certain memory exploits. Disabling it allows us to read memory more easily.
 
 To check if ASLR is enabled, use the following command.
 {% highlight shell %}
@@ -21,10 +18,13 @@ cat /proc/sys/kernel/randomize_va_space
 {% endhighlight %}
 
 * 0 – No randomization. Everything is static.
-
 * 1 – Conservative randomization. Shared libraries, stack, `mmap()`, VDSO and heap are randomized.
-
 * 2 – Full randomization. In addition to elements listed in the previous point, memory managed through `brk()` is also randomized.
+
+To disable ASLR, run the following command in Linux terminal.
+{% highlight shell %}
+echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+{% endhighlight %}
 
 [Source](https://securityetalii.es/2013/02/03/how-effective-is-aslr-on-linux-systems/)
 
@@ -56,12 +56,13 @@ gdb ETT001
 
 We now add a breakpoint at the beginning of line 5.
 `(gdb) break ETT001.c:5`
-When the program hits this breakpoint the previous line (below) will have been executed. In other words, the `char` array `sad_cold_truth` will have been allocated and written in memory (and available for our inspection).
+When the program hits this breakpoint, the previous line (below) will have been executed. In other words, the `char` array `sad_cold_truth` will have been allocated and written in memory (and available for our inspection).
 {% highlight c %}
 char sad_cold_truth[23] = "BTW, I don't use Arch.";
 {% endhighlight %}
 
 We then run the program.
+
 `(gdb) run`
 
 The program should automatically break at line 5. Before we can begin examining its memory content, we will need to find out exactly where in memory the program lives. One way to do that is by looking at its stack pointer. On x86_64 machines it is saved in the `%rsp` register after the function is called. We can find its value by dumping registers.
@@ -88,4 +89,4 @@ We then receive the below output:
 0x7fffffffdfc0:	0x20	0x41	0x72	0x63	0x68	0x2e	0x00	0x00
 ```
 
-By consulting the ASCII table we see that the `char` array begins at `0x7fffffffdfb0` and terminates with null at `0x7fffffffdfc7`. It is in strict sequential order. In other words, ASCII characters, when stored in memory in `char` arrays in C, are stored sequentially without regard to endianness.
+By consulting the ASCII table we see that the `char` array begins at `0x7fffffffdfb0` and terminates with null at `0x7fffffffdfc7`. It is in strict sequential order. **In other words, ASCII characters, when stored in memory in `char` arrays in C, are stored sequentially without regard to endianness.**
