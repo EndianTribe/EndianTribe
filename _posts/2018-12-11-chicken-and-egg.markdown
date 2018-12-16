@@ -30,7 +30,7 @@ GoDaddy. Believe it or not, as of this writing there is no option to register a 
 
 **Website hosting service?**
 
-Github. Cheapskate’s default option. Also works great with Jekyll. Since Github makes the site for me, all I need is git to work on my website.
+Github. Cheapskate’s default option. Also works great with Jekyll.
 
 **Video editing software?**
 
