@@ -48,6 +48,7 @@ gcc -o ETT001 ETT001.c -fno-stack-protector -g
 * `-o ETT001` specifies the output name.
 * `ETT001.c` specifies the source C file.
 * `-fno-stack-protector` disables the stack protector so that assembly and memory can be read more easily.
+* `-g` prepares the binary for analysis in gdb.
 
 Now we are ready to use gdb to crack open the compiled C program.
 {% highlight shell %}
