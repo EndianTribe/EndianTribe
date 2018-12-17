@@ -32,6 +32,14 @@ GoDaddy. Believe it or not, as of this writing there is no option to register a 
 
 Github. Cheapskate’s default option. Also works great with Jekyll.
 
+**Virtualization software?**
+
+Oracle VM VirtualBox.
+
+**Preferred OS?**
+
+Personal computer runs Windows. Nerdy stuff happens in Ubuntu. Sorry I don’t use Arch.
+
 **Video editing software?**
 
 Adobe Premiere. Lynda.com has been supremely helpful in terms of teaching me how to use the software.
