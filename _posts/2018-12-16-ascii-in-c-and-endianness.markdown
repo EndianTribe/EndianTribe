@@ -50,6 +50,8 @@ gcc -o ETT001 ETT001.c -fno-stack-protector -g
 * `-fno-stack-protector` disables the stack protector so that assembly and memory can be read more easily.
 * `-g` prepares the binary for analysis in gdb.
 
+*Note: If the compiler complains with errors relating to “stray ‘\200’ in program,” it is likely that you used characters that are encoded outside the ASCII range. Quotation marks, tabs, and hyphens are common culprits. Pasting the source code into an IDE should help you identify the offenders.*
+
 Now we are ready to use gdb to crack open the compiled C program.
 {% highlight shell %}
 gdb ETT001
