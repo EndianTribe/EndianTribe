@@ -84,7 +84,7 @@ Now we can examine memory beginning at that location.
 * `/24` indicates we wish to examine 24 bytes of memory.
 * The second `x` specifies hexadecimal as the output format.
 * `b` tells gdb to output the results one byte at a time.
-* `0x7fffffffdfb0` is the beginning address to examine in hexadecimal.
+* `0x7fffffffdfb0` is the beginning address to examine.
 
 We then receive the below output:
 
