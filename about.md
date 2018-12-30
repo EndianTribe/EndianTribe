@@ -12,4 +12,6 @@ I make short and (hopefully) concise reference videos that discuss only *one* co
 
 It is called Endian Tribe simply because the very first video is on Endianness.
 
+
+
 More later.

@@ -22,7 +22,7 @@ YouTube. Although I did hear Pornhub is gaining popularity fast.
 
 **Business cloud service provider?**
 
-Google G Suite. Makes most sense given Google’s tight integration with YouTube.
+Google G Suite ([Affiliate Link][GSuite Affiliate Link]). Makes most sense given Google’s tight integration with YouTube.
 
 **Domain registrar?**
 
@@ -59,3 +59,5 @@ My trusty computer running 4770k and 1080Ti. Since I like high quality H.265, re
 
 
 More later.
+
+[GSuite Affiliate Link]: https://refergsuite.app.goo.gl/nhrr
