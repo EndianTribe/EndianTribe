@@ -6,7 +6,7 @@ categories: ET_Tour
 ---
 **TL;DR: ASCII characters, when stored in memory in `char` arrays in C, are stored sequentially without regard to endianness.**
 
-Youtube video related to this post can be found here.
+[Youtube video related to this post can be found here.](https://youtu.be/WrVJ3JhS6xY)
 
 To demonstrate:
 
